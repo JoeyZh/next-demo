@@ -15,6 +15,10 @@ export function SidebarIcon({ panel, index, onClick }: SidebarIconProps) {
 
   return (
     <div className="relative">
+       {/* Order indicator */}
+      <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 text-xs text-gray-400">
+        {index + 1}
+      </span>
       <button
         onClick={onClick}
         className={`p-3 rounded-lg transition-all duration-200 ${
@@ -26,10 +30,6 @@ export function SidebarIcon({ panel, index, onClick }: SidebarIconProps) {
       >
         <IconComponent className="w-6 h-6" />
       </button>
-      {/* Order indicator */}
-      <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 text-xs text-gray-400">
-        {index + 1}
-      </span>
     </div>
   );
 }
